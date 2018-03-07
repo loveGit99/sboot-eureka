@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: student-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node1:9091/eureka,http://node2:9092/eureka,http://node3:9093/eureka
+

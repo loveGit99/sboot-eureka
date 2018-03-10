@@ -2,7 +2,7 @@
 <configuration>
 	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 	<springProperty scope="context" name="springAppName" source="spring.application.name"/>
-	<!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+	
 	<property name="LOG_HOME" value="e:\\logs" />
 	<!--项目名称 -->
 	<property name="PRO_NAME" value="stu-service" />
@@ -26,7 +26,7 @@
 		</encoder>
 	</appender>
 
-	<!-- 按照每天生成日志文件 -->
+	
 	<!-- 按照每天生成日志文件 -->
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${LOG_HOME}/${PRO_NAME}/stu-server.log</file>
@@ -39,9 +39,6 @@
 			<charset>utf8</charset>
 		</encoder>
 	</appender>
-
-
-
 
 	<!-- 日志输出级别 ERROR,WARN,INFO,DEBUG -->
 	<root level="INFO">

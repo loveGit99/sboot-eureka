@@ -3,6 +3,12 @@ server:
 spring:
   application:
     name: order-service
+  zipkin:
+    baseUrl: http://node1:5000
+    enabled: true
+  sleuth:
+    sampler:
+      percentage: 1
 
 eureka:
   client:
@@ -19,5 +25,7 @@ ribbon:
   ReadTimeout: 10000
 
 #
+logging:
+  config: classpath:logback.xml
 
 

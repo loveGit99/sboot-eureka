@@ -32,18 +32,11 @@ import java.net.ServerSocket;
  * @date 2018/3/1 18:47
  * @see
  */
-//@EnableFeignClients
-//@EnableEurekaClient
 @SpringBootApplication
 public class StuMain extends BaseMain {
 
-
-
-
 	public static void main(String[] args) {
-//		new SpringApplicationBuilder(StuMain.class).web(true).run(args);
 		startUp(args);
-
 	}
 
 }

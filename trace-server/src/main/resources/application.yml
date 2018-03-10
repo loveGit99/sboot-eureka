@@ -1,0 +1,11 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: trace-server
+  zipkin:
+    baseUrl: http://node1:${server.port}
+  sleuth:
+    log:
+      slf4j:
+        enabled: false

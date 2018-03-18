@@ -1,0 +1,47 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: order-service
+  sleuth:
+    sampler:
+      percentage: 1
+  rabbitmq:
+    host: node1
+    port: 5672
+    username: admin
+    password: admin
+  zipkin:
+    enabled: true
+#    baseUrl: http://node1:5000
+  cloud:
+    stream:
+      bindings:
+#        sleuth:
+#          destination: allen-test
+        input:
+#          destination: allen-test
+          binder: rabbit2
+      binders:
+        rabbit2:
+          type: rabbit
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node1:9091/eureka,http://node2:9092/eureka,http://node3:9093/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+
+
+# global timeout setting (Maybe has not a prompt in IDE, but it is efficient in fact)
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 10000
+  OkToRetryOnAllOperations: false
+
+#
+logging:
+  config: classpath:logback.xml
+
+

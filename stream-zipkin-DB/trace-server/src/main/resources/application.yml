@@ -1,0 +1,27 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: trace-server
+#  zipkin:
+#    baseUrl: http://node1:${server.port}
+  sleuth:
+    enabled: true
+
+  datasource:
+#    schema: classpath:mysql.sql
+    url: jdbc:mysql://192.168.10.115:3306/trace_server?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: oRcl_123
+    driverClassName: com.mysql.jdbc.Driver
+    continueOnError: true
+    initialize: true
+  rabbitmq:
+    host: node1
+    port: 5672
+    username: admin
+    password: admin
+
+zipkin:
+  storage:
+    type: mysql

@@ -1,0 +1,32 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: order-service
+  zipkin:
+    baseUrl: http://node1:5000
+    enabled: true
+  sleuth:
+    sampler:
+      percentage: 1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://node1:9091/eureka,http://node2:9092/eureka,http://node3:9093/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+
+
+# global timeout setting (Maybe has not a prompt in IDE, but it is efficient in fact)
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 10000
+  OkToRetryOnAllOperations: false
+
+#
+logging:
+  config: classpath:logback.xml
+
+

@@ -10,9 +10,9 @@ spring:
 
   datasource:
 #    schema: classpath:mysql.sql
-    url: jdbc:mysql://192.168.10.115:3306/trace_server?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    url: jdbc:mysql://192.168.xxx.xxx:3306/trace_server?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
-    password: oRcl_123
+    password: xxxx
     driverClassName: com.mysql.jdbc.Driver
     continueOnError: true
     initialize: true

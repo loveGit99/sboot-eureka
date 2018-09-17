@@ -10,7 +10,7 @@ spring:
     name: student-service
   cloud:
     inetutils:
-      preferredNetworks[0]: ^192\.168
+      preferredNetworks[0]: ^192\.168\.139
   zipkin:
     baseUrl: http://node1:5000
     enabled: true
@@ -21,7 +21,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://10.41.1.140:9091/eureka,http://10.41.1.140:9092/eureka,http://10.41.1.140:9093/eureka
+      defaultZone: http://node1:9091/eureka,http://node2:9092/eureka,http://node3:9093/eureka
   instance:
     # 注册到注册中心是以IP注册的
     prefer-ip-address: true
